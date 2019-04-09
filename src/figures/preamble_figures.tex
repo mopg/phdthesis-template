@@ -1,0 +1,130 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsfonts}
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{textcomp} % Needed for symbols such as degrees, copyright, etc.
+\usepackage[gen]{eurosym}
+\usepackage{ar}
+
+\usepackage[scale=1.09,textlf,mathlf,swash]{MinionPro}
+\usepackage[scale=1.09]{MyriadPro}
+
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows,shapes,positioning,shadows,trees,patterns,intersections,matrix,fit,backgrounds}
+\pgfplotsset{compat=newest}
+  \pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight
+    \newlength\figurewidth
+\usepackage{tikz-3dplot}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\tikzset{
+  basic box/.style={
+    shape=rectangle, rounded corners, align=center,
+    draw=#1, fill=#1!25},
+}
+
+% \usepackage[table,pdftex]{xcolor}
+
+\definecolor{MITred}{RGB}{163, 31, 52} % #a31f34
+\definecolor{MITdg}{RGB}{138, 139, 140}
+\definecolor{MITlg}{RGB}{194, 192, 191}
+\definecolor{AAblue}{RGB}{0, 23, 63}
+\definecolor{AAgray}{RGB}{123, 118, 117}
+\definecolor{AAlb}{RGB}{0, 135, 188}
+\definecolor{AAMITmix}{RGB}{82, 27, 58}
+
+\definecolor{red}{HTML}{AD1737}
+\definecolor{brown}{HTML}{990000}
+\definecolor{bar}{HTML}{8D9965}
+
+\definecolor{AAblue2}{RGB}{0, 71, 117} % #004775
+
+\colorlet{AAMITmix2}{AAblue2!50!MITred}
+
+\definecolor{redc}{RGB}{230, 50, 50}
+\definecolor{bluec}{RGB}{0, 70, 150}
+\definecolor{greenc}{RGB}{50, 140, 80}
+
+% color schemes
+%   continuous (4)
+\colorlet{cont41}{MITred}
+\colorlet{cont42}{MITred!65}
+\colorlet{cont43}{AAblue2!65}
+\colorlet{cont44}{AAblue2}
+
+%   continuous (5)
+\colorlet{cont51}{MITred}
+\colorlet{cont52}{MITred!75!white}
+\colorlet{cont53}{AAMITmix2!75!white}
+\colorlet{cont54}{AAblue2!75!white}
+\colorlet{cont55}{AAblue2}
+
+%   continuous (6)
+\colorlet{cont61}{MITred}
+\colorlet{cont62}{MITred!85!white}
+\colorlet{cont63}{MITred!60!white}
+\colorlet{cont64}{AAblue2!60!white}
+\colorlet{cont65}{AAblue2!85!white}
+\colorlet{cont66}{AAblue2}
+
+%   continuous (7)
+\colorlet{cont71}{MITred}
+\colorlet{cont72}{MITred!85!white}
+\colorlet{cont73}{MITred!65!white}
+\colorlet{cont74}{AAMITmix2!50!white}
+\colorlet{cont75}{AAblue2!65!white}
+\colorlet{cont76}{AAblue2!85!white}
+\colorlet{cont77}{AAblue2}
+
+%   continuous (8)
+\colorlet{cont81}{MITred}
+\colorlet{cont82}{MITred!85!white}
+\colorlet{cont83}{MITred!70!white}
+\colorlet{cont84}{MITred!55!white}
+\colorlet{cont85}{AAblue2!55!white}
+\colorlet{cont86}{AAblue2!70!white}
+\colorlet{cont87}{AAblue2!85!white}
+\colorlet{cont88}{AAblue2}
+
+%   continuous (9)
+\colorlet{cont91}{MITred}
+\colorlet{cont92}{MITred!87!white}
+\colorlet{cont93}{MITred!75!white}
+\colorlet{cont94}{MITred!63!white}
+\colorlet{cont95}{AAMITmix2!50!white}
+\colorlet{cont96}{AAblue2!63!white}
+\colorlet{cont97}{AAblue2!75!white}
+\colorlet{cont98}{AAblue2!87!white}
+\colorlet{cont99}{AAblue2}
+
+%   qualitative (4)
+\colorlet{qual41}{MITred}
+\colorlet{qual44}{AAblue2}
+\definecolor{qual42}{RGB}{0,163,136}
+\definecolor{qual43}{RGB}{163,84,31}
+
+%   qualitative (5)
+% \colorlet{qual51}{MITred}
+% \colorlet{qual55}{AAblue2}
+% \definecolor{qual52}{RGB}{234, 110, 68}
+% \definecolor{qual53}{RGB}{235, 210, 113}
+% \definecolor{qual54}{RGB}{35, 133, 135}
+\colorlet{qual55}{AAblue2}
+\definecolor{qual54}{RGB}{166,206,227}
+\definecolor{qual53}{RGB}{251,154,153}
+\colorlet{qual51}{MITred}
+\colorlet{qual52}{qual53!50!qual51}
+
+\definecolor{qual61}{RGB}{166,206,227}
+\colorlet{qual62}{AAblue2}
+\definecolor{qual63}{RGB}{178,223,138}
+\definecolor{qual64}{RGB}{51,160,44}
+\definecolor{qual65}{RGB}{251,154,153}
+\colorlet{qual66}{MITred}
+
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-0.75mu}\mkern 0.75mu}
+
+\DeclareMathOperator*{\argmin}{arg\,min}

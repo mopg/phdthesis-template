@@ -1,0 +1,107 @@
+% !TEX root = thesis.tex
+\documentclass[11pt, % MIT requirements, at least 11 pt
+            %    draft,
+            %    draftversion, % prints draft on front page
+               twoside,
+               letterpaper,openright]{mitthesis}
+
+\hypersetup{
+  pdfinfo={
+    Title={Some long title about some interesting subject},
+    Author={John Doe},
+    Subject={PhD Thesis},
+    Keywords={MIT, some interesting subject}
+  }
+}
+
+\author{John Doe}
+
+\include{preamble}
+
+\addbibresource{bibliography.bib}
+
+\begin{document}
+  \chapterstyle{mit}
+  \pagestyle{mit}
+  \maxsecnumdepth{subsection}
+
+    \mainmatter
+
+      \begin{whole}
+        \maketitle
+      \end{whole}
+
+      {\pagestyle{plain}%
+      \printabstract{chapters/0_abstract}%
+      }
+      \cleardoublepage
+
+      \include{dedication}
+
+      \cleardoublepage
+      \include{acknowledgements}
+
+      \cleardoublepage%
+      \pdfbookmark{\contentsname}{toc}%
+      \tableofcontents*
+
+      \cleardoublepage
+
+      {\phantomsection%
+      \input{nomenclature.tex}%
+      \addcontentsline{toc}{chapter}{Nomenclature}%
+      \printnomenclature[0.8in]%
+      }%
+
+      \cleardoublepage
+
+      {\phantomsection%
+      \printglossary[title=Acronyms,type=\acronymtype]}
+
+      \cleardoublepage
+
+      {\RaggedRight\listoffigures\cleardoublepage
+      \listoftables}
+
+      \include{chapters/1_intro}
+
+      \include{chapters/2_methods}
+
+      \include{chapters/3_results}
+
+      \include{chapters/4_conclusion}
+
+      \printbibliography
+
+      \addcontentsline{toc}{part}{\appendixtocname}
+      \appendixpage*
+
+      \def\chaptername{Appendix}
+
+      \bookmarksetup{startatroot}
+      \appendix
+      \include{appendices/app}
+
+      {\small\printindex}
+
+      \newpage  \clearpage \mbox{}
+      \input{colophon.tex}
+
+      \newpage  \clearpage \mbox{} \thispagestyle{empty}
+      \newpage  \clearpage \mbox{} \thispagestyle{empty}%
+      {%
+        \begin{tikzpicture}[remember picture,overlay]
+        \node[at=(current page.south),gray,anchor=south,yshift=1in,text width=0.5\paperwidth,align=center]{
+            \footnotesize%
+            \begin{minipage}{\linewidth}
+                  \centering
+                  Ph.D. Dissertation\\
+                  John Doe\vskip0.5em
+                  \textit{Some very long title}\\
+                  \textit{about some interesting topic}\vskip0.5em
+                  -- \textsc{mmxviii} --
+            \end{minipage}};
+        \end{tikzpicture}
+      }
+
+\end{document}

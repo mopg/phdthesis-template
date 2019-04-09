@@ -1,0 +1,139 @@
+% !TEX root = proposal.tex
+
+% For packages not directly related to MIT thesis class
+
+%%%   Todo notes
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\karen}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=greenc,backgroundcolor=greenc!25,bordercolor=greenc,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+% ---------------------------------------------------------------------- %
+
+%%%   Extra commands
+%%    Partials
+\newcommand{\PDer}[2]{%
+    \frac{\partial #1}{\partial #2}
+}
+\newcommand{\PDerT}[2]{%
+    \frac{\partial^2 #1}{\partial #2^2}
+}
+\newcommand{\PDerF}[2]{%
+    \frac{\partial^4 #1}{\partial #2^4}
+}
+\newcommand{\PDerFM}[3]{%
+    \frac{\partial^4 #1}{\partial #2^2 \partial #3^2}
+}
+\newcommand{\PDerTh}[2]{%
+    \frac{\partial^3 #1}{\partial #2^3}
+}
+\newcommand{\PDerThM}[3]{%
+    \frac{\partial^3 #1}{\partial #2 \partial #3}
+}
+
+\newcommand{\PDerM}[3]{%
+    \frac{\partial^2 #1}{\partial #2 \partial #3}
+}
+\newcommand{\DerF}[2]{%
+    \frac{\mathrm{d}^4 #1}{\mathrm{d} #2^4}
+}
+\newcommand{\Der}[2]{%
+    \frac{\mathrm{d} #1}{\mathrm{d} #2}
+}
+\newcommand{\DerT}[2]{%
+    \frac{\mathrm{d}^2 #1}{\mathrm{d} #2^2}
+}
+\newcommand{\DerTh}[2]{%
+    \frac{\mathrm{d}^3 #1}{\mathrm{d} #2^3}
+}
+
+%% Extra math commands
+\newcommand*{\rttensor}[1]{\overline{\overline{#1}}}
+\newcommand{\bomega}{\textrm{\boldmath$\omega$}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\Tr}{Tr}
+
+%%% Tikz
+%%  3D Plot
+\makeatletter
+\tikzoption{canvas is xy plane at z}[]{%
+  \def\tikz@plane@origin{\pgfpointxyz{0}{0}{#1}}%
+  \def\tikz@plane@x{\pgfpointxyz{1}{0}{#1}}%
+  \def\tikz@plane@y{\pgfpointxyz{0}{1}{#1}}%
+  \tikz@canvas@is@plane
+}
+\makeatother
+
+% checkmarks etc.
+\definecolor{darkgreen}{RGB}{26, 139, 26}
+\newcommand{\Cross}{$\mathbin{\tikz [x=1.4ex,y=1.4ex,line width=.2ex, MITred] \draw (0,0) -- (1,1) (0,1) -- (1,0);}$}%
+\newcommand{\Checkmark}{$\color{darkgreen}\checkmark$}
+
+\newcommand{\todofig}{%
+  \begin{tikzpicture}%
+    \draw[line cap=rect,fill=MITred!50] (0,0) rectangle (\linewidth-\pgflinewidth,-5) node[pos=.5] {WORK IN PROGRESS};
+  \end{tikzpicture}
+}
+
+%%% Nomenclature
+
+% Copying \! to \negspace -- can't use \! in nomenclature
+\let\negspace\!
+
+\usepackage{nomencl}
+\usepackage{etoolbox,ragged2e,mathtools} % Nomenclature
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\setlength{\nomitemsep}{-\parsep}
+\addtolength{\nomitemsep}{4pt} % same as list of figures/tables
+
+\renewcommand{\nomgroup}[1]{\medskip}
+
+\renewcommand*{\nompreamble}{\markboth{\nomname}{\nomname}}
+\renewcommand{\nomname}{Nomenclature}
+
+\makenomenclature
+
+%%% Equations
+
+% cancel parts of equation
+\usepackage{cancel}
+
+\newcommand{\crit}{\textrm{crit}}
+\newcommand{\fl}{\textrm{fl}}
+\newcommand{\eng}{\textrm{eng}}
+\newcommand{\smc}{\textrm{smc}}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-0.75mu}\mkern 0.75mu}
+
+% Transpose symbol
+\newcommand{\trans}{\mathsf{\mathsmaller T}}
+
+% To gray out zeros
+\newcommand{\zz}{\textcolor{gray!75}{\mathbf{0}}}
+\newcommand{\zzs}{\textcolor{gray!75}{0}}
+
+\newcommand{\enn}{n}
+\newcommand{\emm}{m}
+
+%%% Acronyms
+\input{acronyms.tex}
+
+%%% Fonts
+
+% special commands for lining figures
+\newcommand{\SUTwo}{{\myliningnumfont SU2}}
+\newcommand{\RAE}{{\myliningnumfont RAE2822}}
+\newcommand{\NACASIX}{{\myliningnumfont NACA64A010}}
+\newcommand{\TwoD}{{\myliningnumfont 2D}}
+\newcommand{\ThreeD}{{\myliningnumfont 3D}}
+\newcommand{\DTwo}{{\myliningnumfont D8.2}}
+\newcommand{\DZero}{{\myliningnumfont D8.0}}
+\newcommand{\NThree}{{\myliningnumfont N+3}}
+
+% Hyphenation
+\hyphenation{mecan-ique}
+\hyphenation{Helm-holtz}
+
+\usepackage{lipsum} % filler material
