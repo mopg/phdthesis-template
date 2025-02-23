@@ -10,7 +10,7 @@ Use the provided [`Makefile`](src/Makefile) to compile the text and the separate
 
 If you want to use Minion Pro and Myriad Pro fonts in your thesis (which is what I used),
 you'll need to compile those on your machine using [FontPro](https://github.com/sebschub/FontPro)
-and then uncomment lines 186-187 in [`mitthesis.cls](`src/mitthesis`)
+and then uncomment lines 186-187 in [`mitthesis.cls`](src/mitthesis)
 and lines 11-12 in [`preamble_figures.tex`](src/figures/preamble_figures.tex).
 Lastly, you should also update the text in the colophon (if you choose to use it).
 
