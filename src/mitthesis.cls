@@ -435,6 +435,8 @@
   }[#1\onelineskip]%
 }%
 
+\RequirePackage{marginfix} % for citations, needs to be loaded before footmisc
+
 \RequirePackage[symbol]{footmisc}
 \newcounter{mparcnt}
 \renewcommand\themparcnt{\fnsymbol{mparcnt}}
@@ -538,7 +540,6 @@
 %% Citations
 %%
 
-\RequirePackage{marginfix}
 \RequirePackage[hyperref=true,style=aiaa,giveninits=true,doi=true,isbn=true,
                 url=true,backref,backrefstyle=none,maxcitenames=1,
                 dateabbrev=false,urldate=long,labeldateparts]{biblatex}
