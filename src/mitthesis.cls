@@ -159,7 +159,6 @@
     \newlength\figurewidth
 \RequirePackage{tikz-3dplot}
 \RequirePackage{tkz-euclide}
-\usetkzobj{all}
 \tikzset{
   basic box/.style={
     shape=rectangle, rounded corners, align=center,
@@ -184,8 +183,8 @@
 %%
 %% Fonts (2)
 %%
-\RequirePackage[scale=1.09,textosf,mathlf,swash,roundv]{MinionPro} % COMMENT THIS FOR PALATINO
-\RequirePackage[scale=1.00]{MyriadPro} % COMMENT THIS FOR PALATINO
+% \RequirePackage[scale=1.09,textosf,mathlf,swash,roundv]{MinionPro} % COMMENT THIS FOR PALATINO
+% \RequirePackage[scale=1.00]{MyriadPro} % COMMENT THIS FOR PALATINO
 \linespread{1.11}
 \DeclareMathAlphabet{\mathfrak}{OMS}{cmsy}{m}{n}
 \SetMathAlphabet\mathfrak{bold}{OMS}{cmsy}{b}{n}
@@ -596,16 +595,6 @@
   \setunit{}}
 
 \makeatletter
-%%%% hack to move punctuation like autocite
-\long\def\blx@defcitecmd@iii#1[#2]{%
-  \protected\long\csedef{blx@cite@#1}##1##2##3##4{%
-    \begingroup
-    \blx@citeinit
-    \ifstrequal{#1}{superpluscite}{\noexpand\unspace##4}{}%
-    \unexpanded{#2}{\blxciteicmd{#1}{##1}{##2}{##3}{}}%
-    \ifstrequal{#1}{superpluscite}{}{##4}\endgroup}%
-  \blx@defcitecmd@iv{#1}}
-%%%% hack end
 
 \DeclareCiteCommand{\cbx@mcite}[\mkbibsuperscript]
   {\usebibmacro{cite:init}%
@@ -636,6 +625,8 @@
 
 \newrobustcmd{\cbx@mcite@init}[2]{%
   \def\cbx@savedcites{#1}#2\cbx@savedcites\empty}
+
+\DeclareCitePunctuationPosition{\mcite}{f} % cite like autocite
 \makeatother
 
 %%
@@ -749,8 +740,8 @@
       {\large Doctor of Philosophy} \vspace{0.75pc} \\
       at the \vspace{0.75pc} \\
       {\large Massachusetts Institute of Technology} \vspace{0.75pc} \\
-      {\large September 2018} \vspace{0.75pc}\\
-      {\textcopyright\ Massachusetts Institute of Technology 2018. All rights reserved.}
+      {\large September 2025} \vspace{0.75pc}\\
+      {\textcopyright\ Massachusetts Institute of Technology 2025. All rights reserved.}
     \end{minipage}
     };
 
@@ -760,7 +751,7 @@
       \textsl{Author} \\
       John Doe  \hfill \rule{0.3\textwidth}{.2pt} \\
       Department of Aeronautics and Astronautics \\
-      August 23, 2018 \vspace{0.6pc}\\
+      August 23, 2025 \vspace{0.6pc}\\
       \textsl{Certified by} \\
       Professor 1 \hfill \rule{0.3\textwidth}{.2pt}\\
       Professor of Aeronautics and Astronautics \\
@@ -811,7 +802,7 @@
       {\large John Doe}\vspace{1pc} \\
 
       Submitted to the Department of \\
-      Aeronautics and Astronautics on \mbox{August 23, 2018,} \\
+      Aeronautics and Astronautics on \mbox{August 23, 2025,} \\
       in Partial Fulfillment of the Requirements for the Degree of \\
       Doctor of Philosophy in Aerospace Computational Engineering\\
       }%

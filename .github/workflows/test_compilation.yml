@@ -1,0 +1,40 @@
+name: Test LaTeX Compilation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        texlive_image:
+          [
+            "TL2020-historic",
+            "TL2021-historic",
+            "TL2022-historic",
+            "TL2023-historic",
+            "latest-full",
+          ]
+
+    container:
+      image: texlive/texlive:${{ matrix.texlive_image }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        run: |
+          make all
+
+      - name: Upload PDF artifact
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-${{ matrix.texlive_image }}
+          path: thesis.pdf
