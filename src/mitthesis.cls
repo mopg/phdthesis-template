@@ -693,7 +693,8 @@
 %%%
 %% Index (2)
 %%%
-\RequirePackage[toc,nomain,acronym,smallcaps]{glossaries} % List of acronyms and glossary
+\RequirePackage[toc,nomain,acronym]{glossaries} % List of acronyms and glossary
+\setacronymstyle{long-sc-short}
 \renewcommand*{\glsnamefont}[1]{\textup{#1}}
 
 \RequirePackage{makeidx}
