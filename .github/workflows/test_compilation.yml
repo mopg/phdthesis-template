@@ -33,6 +33,9 @@ jobs:
       - name: Compile LaTeX
         run: |
           cd src
+          cd figures
+          make
+          cd ..
           make all
 
       - name: Upload PDF artifact
