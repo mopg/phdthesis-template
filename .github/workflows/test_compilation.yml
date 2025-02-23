@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
@@ -32,6 +32,7 @@ jobs:
 
       - name: Compile LaTeX
         run: |
+          cd src
           make all
 
       - name: Upload PDF artifact
@@ -39,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pdf-${{ matrix.texlive_image }}
-          path: thesis.pdf
+          path: src/thesis.pdf
