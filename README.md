@@ -1,6 +1,7 @@
 # MIT PhD thesis template
 
 This template is used to make [this thesis](https://dspace.mit.edu/handle/1721.1/120380).
+It has also been as the basis for the book [Engineering Design Optimization](https://mdobook.github.io) by Joaquim R. R. A. Martins and Andrew Ning.
 
 ## Usage
 
