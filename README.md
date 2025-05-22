@@ -1,10 +1,11 @@
 # MIT PhD thesis template
 
 > [!WARNING]  
-> This template not longer meets the latest [MIT thesis requirements](https://libraries.mit.edu/distinctive-collections/thesis-specs/). Pull requests to update the template are welcome.
+> This template no longer meets the latest [MIT thesis requirements](https://libraries.mit.edu/distinctive-collections/thesis-specs/). Pull requests to update the template are welcome.
 
 This template is used to make [this thesis](https://dspace.mit.edu/handle/1721.1/120380).
 It has also been as the basis for the book [Engineering Design Optimization](https://mdobook.github.io) by Joaquim R. R. A. Martins and Andrew Ning.
+If you're looking for an example of how to adapt this template for your own university, check out the [University of Washington (UW) PhD thesis template](https://github.com/mopg/uw-phd-thesis) which is based on this template.
 
 ## Usage
 
